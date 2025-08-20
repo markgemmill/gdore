@@ -1,0 +1,49 @@
+<th class="article-checkbox-field">checkbox</th>
+<th class="article-gtin-field">GTIN Number
+<th class="article-num-field">Article Number
+<th class="article-family-field">Family Group</th>
+<th class="article-desc-field">Description</th>
+<th class="exclart-checkbox-field" style="display: none;">Exclude From Deal</th>
+<th class="article-pack-field">Pack</th>
+<th class="article-size-field">Size</th>
+<th class="article-uom-field">Deal / Pricing UOM</th>
+<th class="article-uom-field">Order UOM</th>
+<th class="article-uom-field">Whse Issue UOM</th>
+<th class="article-pack-field">Whse Issue Pack</th>
+<th class="article-uom-field">Retail UOM</th>
+<th class="article-uom-field">Current Cost</th>
+
+
+Off Invoice
+By Cheque
+Count / Recount
+Scan Funding
+New Cost
+Quantity
+
+00  "article-checkbox-field"      checkbox
+01  "article-gtin-field"          GTIN Number
+02  "article-num-field"           Article Number
+03  "article-family-field"        Family Group
+04  "article-desc-field"          Description
+05  "exclart-checkbox-field"      Exclude From Deal
+06  "article-pack-field"          Pack
+07  "article-size-field"          Size
+08  "article-uom-field"           Deal / Pricing UOM
+09  "article-uom-field"           Order UOM
+10  "article-uom-field"           Whse Issue UOM
+11  "article-pack-field"          Whse Issue Pack
+12  "article-uom-field"           Retail UOM
+13  "article-uom-field"           Current Cost
+
+14  "article-deal-field"          Off Invoice
+15  "article-deal-field"          By Cheque
+16  "article-deal-field"          Count / Recount
+17  "article-deal-field"          Scan Funding
+18  "article-deal-field"          New Cost
+19  "article-deal-field"          Quantity
+
+20  "article-sugg-retail-field"   Suggested Retail</th>
+21  "article-comments-field"      Comments
+22  "banner-list-field"           Listed Banners
+23  "article-price-family-field"  Price Family

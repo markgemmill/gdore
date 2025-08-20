@@ -1,0 +1,63 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  VERSION:
+    sh: dover
+
+tasks:
+  build:cli:
+    cmds:
+      - rm -f bin/*
+      - go build -o bin/gdore cli/*.go
+
+  build:gui:
+    cmds:
+      - rm -f bin/macos/*
+      - go build -o bin/macos/gdore gui/*.go
+
+  build:gui:windows:
+    cmds:
+      - rm -f bin/windows/*
+      - go build -o bin/windows/gdore.exe gui/*.go
+    env:
+      GOOS: windows
+      GOARCH: amd64
+      CGO_ENABLED: 1 
+      CC: x86_64-w64-mingw64-gcc
+
+  build:package:
+    cmds:
+      - fyne package -os darwin -icon gd-icon-2.png -exe bin/gdore
+
+  build:package:windows:
+    cmds:
+      - fyne-cross windows
+    env:
+      GOOS: windows
+      GOARCH: amd64
+      CGO_ENABLED: 1 
+      CC: x86_64-w64-mingw64-gcc
+
+  release:tag:
+    cmds:
+      - git tag -a v{{.VERSION}} -m "v{{.VERSION}}"
+
+  release:build:
+    cmds:
+      - goreleaser build --snapshot --rm-dist
+
+  release:
+    cmds:
+      - goreleaser release --rm-dist --skip-announce
+
+
+  test:
+    cmds:
+      - gotestsum --format testname
+
+  test:cover:
+    cmds:
+      - go test -coverprofile=cover.out ./...
+      - go tool cover -html=cover.out

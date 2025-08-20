@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+bin
+dist
+*.sh
+workbench
+cover.out
+deals.txt
+*.graffle
+*.app
+fyne-cross

@@ -6,7 +6,7 @@ toolchain go1.24.4
 
 // replace github.com/markgemmill/appdirs => /Users/mgemmill/dev/libraries/appdirs
 
-// replace github.com/markgemmill/pathlib => /Users/mgemmill/dev/libraries/pathlib
+replace github.com/markgemmill/pathlib => /Users/mgemmill/dev/libraries/pathlib
 
 require (
 	fyne.io/fyne/v2 v2.6.2

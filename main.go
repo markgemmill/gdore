@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gdore/environ"
+	"gdore/gui"
 )
 
 func main() {
@@ -12,5 +13,5 @@ func main() {
 		return
 	}
 
-	Gui(env)
+	gui.Gui(env)
 }

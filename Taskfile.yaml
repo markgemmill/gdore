@@ -20,12 +20,12 @@ tasks:
   build:gui:windows:
     cmds:
       - rm -f bin/windows/*
-      - go build -o bin/windows/gdore.exe gui/*.go
+      - go build -o bin/windows/gdore.exe main.go
     env:
       GOOS: windows
       GOARCH: amd64
-      # CGO_ENABLED: 1 
-      # CC: x86_64-w64-mingw64-gcc
+      CGO_ENABLED: 1 
+      CC: /opt/homebrew/Cellar/mingw-w64/13.0.0_1/toolchain-x86_64/bin/x86_64-w64-mingw32-gcc
 
   build:package:
     cmds:
@@ -37,8 +37,8 @@ tasks:
     env:
       GOOS: windows
       GOARCH: amd64
-      # CGO_ENABLED: 1 
-      # CC: x86_64-w64-mingw64-gcc
+      CGO_ENABLED: 1 
+      CC: /opt/homebrew/Cellar/mingw-w64/13.0.0_1/toolchain-x86_64/bin/x86_64-w64-mingw32-gcc
 
   release:tag:
     cmds:

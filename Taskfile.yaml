@@ -24,8 +24,8 @@ tasks:
     env:
       GOOS: windows
       GOARCH: amd64
-      CGO_ENABLED: 1 
-      CC: x86_64-w64-mingw64-gcc
+      # CGO_ENABLED: 1 
+      # CC: x86_64-w64-mingw64-gcc
 
   build:package:
     cmds:
@@ -33,12 +33,12 @@ tasks:
 
   build:package:windows:
     cmds:
-      - fyne-cross windows
+      - fyne package -os windows -icon gd-icon-2.png -exe bin/windows/gdore.exe
     env:
       GOOS: windows
       GOARCH: amd64
-      CGO_ENABLED: 1 
-      CC: x86_64-w64-mingw64-gcc
+      # CGO_ENABLED: 1 
+      # CC: x86_64-w64-mingw64-gcc
 
   release:tag:
     cmds:

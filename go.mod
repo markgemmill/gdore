@@ -4,9 +4,9 @@ go 1.23.0
 
 toolchain go1.24.4
 
-replace github.com/markgemmill/appdirs => /Users/mgemmill/dev/libraries/appdirs
+// replace github.com/markgemmill/appdirs => /Users/mgemmill/dev/libraries/appdirs
 
-replace github.com/markgemmill/pathlib => /Users/mgemmill/dev/libraries/pathlib
+// replace github.com/markgemmill/pathlib => /Users/mgemmill/dev/libraries/pathlib
 
 require (
 	fyne.io/fyne/v2 v2.6.2
@@ -14,7 +14,7 @@ require (
 	github.com/alecthomas/kong v0.7.0
 	github.com/go-rod/rod v0.116.2
 	github.com/markgemmill/appdirs v0.1.0-dev.0
-	github.com/markgemmill/pathlib v0.1.0
+	github.com/markgemmill/pathlib v0.1.1
 	github.com/xuri/excelize/v2 v2.9.1
 )
 

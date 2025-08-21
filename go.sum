@@ -55,6 +55,10 @@ github.com/jsummers/gobmp v0.0.0-20230614200233-a9de23ed2e25 h1:YLvr1eE6cdCqjOe9
 github.com/jsummers/gobmp v0.0.0-20230614200233-a9de23ed2e25/go.mod h1:kLgvv7o6UM+0QSf0QjAse3wReFDsb9qbZJdfexWlrQw=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
 github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
+github.com/markgemmill/appdirs v0.1.0-dev.0 h1:Sqh4kKe+QQXnc9fkOO3H2eAFbifHzwntTWM+Dqw2XMY=
+github.com/markgemmill/appdirs v0.1.0-dev.0/go.mod h1:HtzN6WS7aCqirBIzMXNpJjDSZU5LnA4I2JkO0ArFmPw=
+github.com/markgemmill/pathlib v0.1.1 h1:/nt9NdRlHuRV4wcYN8tbcNrnxg89m848oNa54JWGudo=
+github.com/markgemmill/pathlib v0.1.1/go.mod h1:11cdoPyvcwLeLDYkTcfYdm9EJLedlXyo0kzyClKGUng=
 github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=
 github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646/go.mod h1:jpp1/29i3P1S/RLdc7JQKbRpFeM1dOBd8T9ki5s+AY8=
 github.com/nicksnyder/go-i18n/v2 v2.5.1 h1:IxtPxYsR9Gp60cGXjfuR/llTqV8aYMsC472zD0D1vHk=

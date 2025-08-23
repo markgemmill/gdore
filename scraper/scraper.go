@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gdore/environ"
 	"regexp"
+	"slices"
 	"strings"
 	"time"
 
@@ -115,8 +116,8 @@ var docIdRx regexp.Regexp = *regexp.MustCompile(`^\d+$`)
 
 func ParseDocumentIdInput(documents string) []string {
 	docs := []string{}
-	for _, line := range strings.Split(documents, "\n") {
-		doc := strings.Trim(line, " ")
+	for _, line := range slices.Sorted(strings.Lines(documents)) {
+		doc := strings.Trim(line, "\r\n ")
 		if doc == "" {
 			continue
 		}

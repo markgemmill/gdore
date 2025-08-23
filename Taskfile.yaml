@@ -20,7 +20,7 @@ tasks:
   build:gui:windows:
     cmds:
       - rm -f bin/windows/*
-      - go build -o bin/windows/gdore.exe main.go
+      - go build -o bin/windows/gdore-{{.VERSION}}.exe main.go
     env:
       GOOS: windows
       GOARCH: amd64
@@ -33,7 +33,7 @@ tasks:
 
   build:package:windows:
     cmds:
-      - fyne package -os windows -icon gd-icon-2.png -exe bin/windows/gdore.exe
+      - fyne package -os windows -icon gd-icon-2.png -exe bin/windows/gdore-{{.VERSION}}.exe
     env:
       GOOS: windows
       GOARCH: amd64

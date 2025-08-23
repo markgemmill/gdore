@@ -12,9 +12,23 @@ import (
 	"github.com/go-rod/rod/lib/launcher"
 )
 
+func OpenMSEdgeBrowser(env environ.Environ, logger *Logger) string {
+	logger.Log("launching MS Edge browser...")
+	return launcher.New().Bin(env.BrowserApp).MustLaunch()
+}
+
+func OpenDefaultBrowser(env environ.Environ, logger *Logger) string {
+	logger.Log("launching default Chromium browser...")
+	return launcher.New().Headless(env.Headless).MustLaunch()
+}
+
 func OpenPortal(env environ.Environ, logger *Logger) *rod.Page {
-	logger.Log("launching browser...")
-	u := launcher.New().Headless(env.Headless).MustLaunch()
+	u := ""
+	if env.BrowserApp == "" {
+		u = OpenDefaultBrowser(env, logger)
+	} else {
+		u = OpenMSEdgeBrowser(env, logger)
+	}
 	logger.Log("opening sobeys portal...")
 	page := rod.New().ControlURL(u).MustConnect().MustPage(SOBEYS_PORTAL)
 	return page

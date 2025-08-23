@@ -10,6 +10,7 @@ type Config struct {
 	DefaultUser string `toml:"default_user,omitempty"`
 	OutputDir   string `toml:"out_dir"`
 	Headless    bool   `toml:"headless_browser"`
+	BrowserApp  string `toml:"browser_app"`
 }
 
 type Environ struct {
@@ -20,6 +21,7 @@ type Environ struct {
 	OutputDir   pathlib.Path
 	DefaultUser string
 	Headless    bool
+	BrowserApp  string
 }
 
 func (env Environ) LogFile(logname string) pathlib.Path {
@@ -31,6 +33,7 @@ func (env Environ) DumpConfig() Config {
 		DefaultUser: env.DefaultUser,
 		Headless:    env.Headless,
 		OutputDir:   env.OutputDir.String(),
+		BrowserApp:  env.BrowserApp,
 	}
 }
 
@@ -60,6 +63,7 @@ func DumpConfig(env Environ) error {
 		DefaultUser: env.DefaultUser,
 		OutputDir:   env.OutputDir.String(),
 		Headless:    env.Headless,
+		BrowserApp:  env.BrowserApp,
 	}
 	content, err := toml.Marshal(cfg)
 	if err != nil {
@@ -91,6 +95,7 @@ func loadEnviron(homeDir pathlib.Path) (Environ, error) {
 		env.OutputDir = pathlib.NewPath(cfg.OutputDir, 0770).Resolve()
 		env.DefaultUser = cfg.DefaultUser
 		env.Headless = cfg.Headless
+		env.BrowserApp = cfg.BrowserApp
 
 	} else {
 		// no existing config, then write the defaults

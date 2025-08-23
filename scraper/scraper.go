@@ -14,12 +14,12 @@ import (
 
 func OpenMSEdgeBrowser(env environ.Environ, logger *Logger) string {
 	logger.Log("launching MS Edge browser...")
-	return launcher.New().Bin(env.BrowserApp).MustLaunch()
+	return launcher.New().Bin(env.BrowserApp).Headless(false).MustLaunch()
 }
 
 func OpenDefaultBrowser(env environ.Environ, logger *Logger) string {
 	logger.Log("launching default Chromium browser...")
-	return launcher.New().Headless(env.Headless).MustLaunch()
+	return launcher.New().Headless(false).MustLaunch()
 }
 
 func OpenPortal(env environ.Environ, logger *Logger) *rod.Page {

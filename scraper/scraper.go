@@ -93,7 +93,7 @@ func DealSearch(page *rod.Page, region string, dealNumber string, logger *Logger
 	logger.Logf("input %s", dealNumber)
 	page.MustElement(DEAL_NO_ID).MustInput(dealNumber)
 	logger.Logf("input region %s", REGION_NO)
-	page.MustElement(REGION_NO_ID).MustSelect(REGION_NO)
+	page.MustElement(REGION_NO_ID).MustSelect(region)
 
 	// set to vendor (not broker)
 	// not all searches have a vendor/broker option

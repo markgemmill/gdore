@@ -7,6 +7,11 @@ vars:
     sh: dover
 
 tasks:
+
+  snyk:scan:
+    cmds:
+      - snyk code test --org=b9b2986b-8b0a-4779-9ea4-15eba68fc262
+
   build:cli:
     cmds:
       - rm -f bin/*
@@ -15,7 +20,7 @@ tasks:
   build:gui:
     cmds:
       - rm -f bin/macos/*
-      - go build -o bin/macos/gdore gui/*.go
+      - go build -o bin/macos/gdore-{{.VERSION}} main.go
 
   build:gui:windows:
     cmds:
@@ -29,7 +34,7 @@ tasks:
 
   build:package:
     cmds:
-      - fyne package -os darwin -icon gd-icon-2.png -exe bin/gdore
+      - fyne package -os darwin -icon gd-icon-2.png -exe bin/macos/gdore
 
   build:package:windows:
     cmds:
